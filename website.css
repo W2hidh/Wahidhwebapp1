@@ -1,0 +1,316 @@
+/* ----------------------------
+   GENERAL RESET & BASE STYLES
+---------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;  
+    color: #f0f0f0;            
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ----------------------------
+   HERO SECTION
+---------------------------- */
+.hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.hero .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00d4ff; 
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00d4ff, #ff6ec7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #bbb;
+}
+
+/* ----------------------------
+   SECTION TITLES
+---------------------------- */
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00d4ff, #ff6ec7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-sub {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #00d4ff;
+    text-decoration: none;
+    border: 1px solid #00d4ff;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #000;
+    background: linear-gradient(90deg, #00d4ff, #ff6ec7);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+/* ----------------------------
+   PROJECTS SECTION
+---------------------------- */
+.projects {
+    padding: 60px 0;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #00d4ff, #ff6ec7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.3),
+                0 0 25px rgba(255, 110, 199, 0.5);
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00d4ff;
+}
+
+.project-content p {
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.project-content ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.project-content ul li {
+    margin-bottom: 8px;
+    color: #f0f0f0;
+}
+
+.project-content .tech {
+    font-size: 0.9rem;
+    color: #ff6ec7;
+}
+
+/* ----------------------------
+   TESTIMONIALS SECTION
+---------------------------- */
+.testimonials {
+    padding: 60px 0;
+    background-color: #1b1b1b;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00d4ff, #ff6ec7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.testimonials .section-sub {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #aaa;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
+    padding: 25px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 110, 199, 0.6);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: #00d4ff;
+    margin-bottom: 5px;
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color: #ff6ec7;
+}
+
+/* ----------------------------
+   FOOTER
+---------------------------- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #1b1b1b;
+    color: #aaa;
+}
+
+section footer {
+    background-color: #1b1b1b;
+    padding: 25px 15px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+section footer p {
+    font-size: 0.9rem;
+    color: #ccc;
+    letter-spacing: 0.5px;
+}
+
+section footer p span {
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+/* ----------------------------
+   RESPONSIVE DESIGN
+---------------------------- */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px 40px;
+    }
+
+    .hero .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .project-card {
+        margin-bottom: 30px;
+    }
+
+    .project-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-content p,
+    .project-content ul li {
+        font-size: 0.9rem;
+    }
+
+    .back-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}

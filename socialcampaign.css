@@ -1,0 +1,819 @@
+/* ===============================
+   GLOBAL RESET & THEME
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0f172a;
+  --card-dark: #111827;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --border: rgba(255,255,255,0.08);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.feed-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* ===============================
+   STORIES
+================================ */
+.stories {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.story {
+  text-align: center;
+}
+
+.story img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.story span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   DASHBOARD
+================================ */
+.campaign-dashboard {
+  margin: 50px 0;
+}
+
+.campaign-dashboard h2 {
+  margin-bottom: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+}
+
+.dash-card {
+  background: var(--card-dark);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.dash-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.dash-card span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ===============================
+   CONTENT GROWTH SECTION
+================================ */
+.content-growth,
+.instagram-growth {
+  background: var(--card-dark);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px 0;
+  border: 1px solid var(--border);
+}
+
+.content-growth h2,
+.instagram-growth h2 {
+  margin-bottom: 15px;
+}
+
+.content-growth p,
+.instagram-growth p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.growth-details ul {
+  margin: 20px 0;
+  list-style: none;
+}
+
+.growth-details li {
+  margin-bottom: 8px;
+}
+
+.growth-proof {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.growth-proof img {
+  max-width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.proof-caption {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ===============================
+   INSTAGRAM POST
+================================ */
+.post {
+  background: var(--card-dark);
+  border-radius: 18px;
+  margin: 40px auto;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  max-width: 500px;
+  cursor: pointer;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.post-header img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.post-header span {
+  font-weight: 600;
+}
+
+.post-media video {
+  width: 100%;
+  display: block;
+}
+
+.post-actions {
+  display: flex;
+  gap: 18px;
+  padding: 12px 15px;
+  font-size: 1.2rem;
+}
+
+.post-actions i {
+  cursor: pointer;
+}
+
+.likes {
+  padding: 0 15px;
+  font-weight: 600;
+}
+
+.caption {
+  padding: 5px 15px 15px;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   COMMENTS SECTION
+================================ */
+.instagram-comments {
+  background: var(--card-dark);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 60px 0;
+  border: 1px solid var(--border);
+}
+
+.comments-container {
+  margin-top: 20px;
+}
+
+.comment {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.user {
+  font-weight: 600;
+}
+
+.text {
+  margin-left: 6px;
+}
+
+.reply {
+  display: block;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   FADE IN ANIMATION
+================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .stories {
+    overflow-x: auto;
+  }
+
+  .content-growth,
+  .instagram-growth,
+  .instagram-comments {
+    padding: 25px;
+  }
+}
+/* ===============================
+   MOBILE RESPONSIVE FIXES
+================================ */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  /* HEADER */
+  .feed-header {
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  /* STORIES */
+  .stories {
+    gap: 10px;
+  }
+
+  .story img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .story span {
+    font-size: 12px;
+  }
+
+  /* DASHBOARD */
+  .campaign-dashboard {
+    padding: 15px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .dash-card {
+    padding: 12px;
+  }
+
+  .dash-value {
+    font-size: 22px;
+  }
+
+  /* CONTENT GROWTH */
+  .content-growth {
+    padding: 25px 15px;
+  }
+
+  .content-growth h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-growth p {
+    font-size: 0.95rem;
+  }
+
+  .growth-details li {
+    font-size: 0.9rem;
+  }
+
+  /* INSTAGRAM POSTS */
+  .post {
+    border-radius: 12px;
+  }
+
+  .post-header img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .post-header span {
+    font-size: 14px;
+  }
+
+  .post-actions {
+    font-size: 20px;
+  }
+
+  .likes,
+  .caption {
+    font-size: 13px;
+  }
+
+  /* VIDEO / REEL */
+  .post-media video {
+    height: 380px;
+    object-fit: cover;
+  }
+
+  /* CHART */
+  canvas {
+    max-height: 260px;
+  }
+
+  /* COMMENTS */
+  .instagram-comments {
+    padding: 20px 15px;
+  }
+
+  .instagram-comments h2 {
+    font-size: 1.4rem;
+  }
+
+  .comment {
+    padding: 12px;
+  }
+
+  .comment .user {
+    font-size: 14px;
+  }
+
+  .comment .text {
+    font-size: 13px;
+  }
+
+  .comment .reply {
+    font-size: 12px;
+  }
+
+  /* BOTTOM NAV (OPTIONAL) */
+  .bottom-nav {
+    padding: 8px 0;
+  }
+}
+
+
+/* ===============================
+   EXTRA SMALL DEVICES
+================================ */
+@media (max-width: 420px) {
+
+  .dash-value {
+    font-size: 20px;
+  }
+
+  .post-media video {
+    height: 340px;
+  }
+
+  .content-growth h2,
+  .instagram-growth h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===============================
+   GLOBAL COLOR ENHANCEMENTS
+================================ */
+:root {
+  --bg-gradient: linear-gradient(135deg, #020617, #0f172a);
+  --card-glass: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(56, 189, 248, 0.4);
+  --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
+  --text-muted: #94a3b8;
+}
+
+body {
+  background: var(--bg-gradient);
+}
+
+/* ===============================
+   GLASSMORPHISM CARDS
+================================ */
+.campaign-dashboard,
+.post,
+.content-growth,
+.instagram-comments,
+.instagram-growth {
+  background: var(--card-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ===============================
+   LOGO & HEADINGS GLOW
+================================ */
+.logo {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 22px;
+}
+
+h2 {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+/* ===============================
+   STORY RING EFFECT
+================================ */
+.story img {
+  padding: 3px;
+  background: var(--accent-gradient);
+  transition: transform 0.3s ease;
+}
+
+.story img:hover {
+  transform: scale(1.1);
+}
+
+/* ===============================
+   DASHBOARD HOVER EFFECT
+================================ */
+.dash-card {
+  transition: all 0.35s ease;
+  border: 1px solid transparent;
+}
+
+.dash-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--border-glow);
+  box-shadow: 0 0 30px rgba(56,189,248,0.3);
+}
+
+.dash-value {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================
+   REEL / POST HOVER EFFECT
+================================ */
+.post {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.post:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(56,189,248,0.25);
+}
+
+/* ===============================
+   REEL HEART ANIMATION ENHANCE
+================================ */
+.reel::after {
+  text-shadow: 0 0 40px #ff4d6d;
+}
+
+/* ===============================
+   INSTAGRAM ACTION ICON EFFECTS
+================================ */
+.post-actions i {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.post-actions i:hover {
+  transform: scale(1.3);
+  color: #ff4d6d;
+}
+
+/* ===============================
+   CTA MESSAGE GLOW
+================================ */
+.growth-message {
+  background: linear-gradient(
+    90deg,
+    rgba(56,189,248,0.15),
+    rgba(129,140,248,0.15)
+  );
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(56,189,248,0.3);
+}
+
+/* ===============================
+   COMMENT CARD EFFECT
+================================ */
+.comment {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment:hover {
+  transform: translateX(6px);
+  box-shadow: 0 0 25px rgba(56,189,248,0.25);
+}
+
+/* ===============================
+   CHART GLOW
+================================ */
+canvas {
+  filter: drop-shadow(0 0 20px rgba(56,189,248,0.3));
+}
+
+/* ===============================
+   SCROLL FADE SMOOTHER
+================================ */
+.fade-in {
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+/* ===============================
+   PREMIUM BUTTON STYLE (OPTIONAL)
+================================ */
+.cta-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: var(--accent-gradient);
+  color: #020617;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(56,189,248,0.6);
+  transition: all 0.35s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px rgba(129,140,248,0.8);
+}
+/* ===============================
+   NEW COLOR PALETTE & ANIMATIONS
+================================ */
+:root {
+  --bg-dark: #050505;
+  --card-glass: rgba(20, 20, 30, 0.7);
+  --accent-primary: #a8ff3e; /* Neon Lime */
+  --accent-secondary: #bd00ff; /* Purple Glow */
+  --accent-tertiary: #00d1ff; /* Cyan */
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --border-neon: rgba(189, 0, 255, 0.3);
+}
+
+/* Moving Mesh Gradient Background */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(189, 0, 255, 0.15), transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(168, 255, 62, 0.1), transparent 40%);
+  z-index: -1;
+  animation: meshMove 15s ease-in-out infinite alternate;
+}
+
+@keyframes meshMove {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2) translate(2%, 2%); }
+}
+
+/* ===============================
+   PREMIUM TOPOGRAPHY & LOGO
+================================ */
+.logo {
+  font-size: 24px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(168, 255, 62, 0.3);
+}
+
+h2 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #fff, var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   NEON CARD EFFECTS
+================================ */
+.dash-card, .post, .content-growth, .instagram-comments {
+  background: var(--card-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Neon Border Glow on Hover */
+.dash-card:hover, .post:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 25px rgba(189, 0, 255, 0.4), inset 0 0 10px rgba(189, 0, 255, 0.2);
+}
+
+.dash-value {
+  color: var(--accent-primary);
+  text-shadow: 0 0 15px rgba(168, 255, 62, 0.5);
+  font-family: 'monospace'; /* Professional data look */
+}
+
+/* ===============================
+   STORY RINGS (MULTI-COLOR)
+================================ */
+.story img {
+  padding: 3px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.story:nth-child(2) img { background: linear-gradient(45deg, var(--accent-primary), var(--accent-tertiary)); }
+.story:nth-child(3) img { background: linear-gradient(45deg, var(--accent-secondary), #ff0055); }
+
+/* ===============================
+   THE "LIQUID" BUTTON
+================================ */
+a[href*="instagram"] {
+  background: var(--accent-primary) !important;
+  color: #000 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 30px rgba(168, 255, 62, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+a[href*="instagram"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(168, 255, 62, 0.6);
+}
+
+/* ===============================
+   CHART ENHANCEMENT
+================================ */
+canvas {
+  filter: drop-shadow(0 0 15px rgba(0, 209, 255, 0.4));
+}/* Animation for Double Tap Heart */
+.neon-heart-pop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 0 0 20px #bd00ff, 0 0 40px #bd00ff;
+  animation: heartPopOut 0.8s ease-out forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes heartPopOut {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  30% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  100% { transform: translate(-50%, -80%) scale(1.5); opacity: 0; }
+}
+
+/* Subtle pulse for the CTA Button */
+.content-growth a {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(168, 255, 62, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(168, 255, 62, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(168, 255, 62, 0); }
+}
+/* BACK TO HOME BUTTON */
+.back-to-home {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0; /* Hidden by default */
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.back-to-home.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-home i {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+.btn-text {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Hover Effect */
+.back-to-home:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 20px var(--accent);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .back-to-home {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+}

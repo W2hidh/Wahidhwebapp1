@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mohamed Wahidh — Videographer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="videoeditor.css">
+</head>
+<body>
+
+<!-- BACK TO HOME BUTTON -->
+<a href="index.html" class="back-to-home">← Back to Home</a>
+
+<!-- HERO HEADER -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">mr•_•wahid</span>
+    <h1 class="hero-name">Mohamed Wahidh</h1>
+    <h2 class="hero-title">Elite Cinematic Videographer</h2>
+    <p class="hero-desc">
+      Capturing cinematic moments, visual stories & timeless frames
+    </p>
+
+    <nav class="hero-nav">
+      <a href="#projects">Works</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <h2>My Works</h2>
+  <div class="video-grid">
+
+    <article class="video-card">
+      <video autoplay muted loop playsinline>
+        <source src="videos/video1.mp4" type="video/mp4">
+      </video>
+      <span class="tag">Travel Highlights</span>
+    </article>
+
+    <article class="video-card">
+      <video autoplay muted loop playsinline>
+        <source src="videos/video2.mp4" type="video/mp4">
+      </video>
+      <span class="tag">Editing Reel</span>
+    </article>
+
+    <article class="video-card">
+      <video autoplay muted loop playsinline>
+        <source src="videos/video3.mp4" type="video/mp4">
+      </video>
+      <span class="tag">Color Grading</span>
+    </article>
+
+    <article class="video-card">
+      <video autoplay muted loop playsinline>
+        <source src="videos/video4.mp4" type="video/mp4">
+      </video>
+      <span class="tag">Motion Graphics</span>
+    </article>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-box">
+    <h2 class="about-title">About Me</h2>
+    <p class="about-text">
+      I’m <span class="highlight">Mohamed Wahidh</span>, a professional
+      <span class="highlight-alt">Videographer & Cinematic Visual Artist</span>
+      specializing in storytelling through motion, light, and composition.
+    </p>
+    <p class="about-text">
+      I craft cinematic visuals for brands, creators, and digital platforms,
+      blending real moments with artistic direction to create premium visuals
+      that connect emotionally.
+    </p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <h2>What Clients Say</h2>
+  <div class="testimonial-grid">
+
+    <div class="testimonial-card">
+      <p>“Wahidh delivered cinematic-quality edits with smooth transitions and perfect color grading. Highly professional and creative.”</p>
+      <h4>— Arjun Kumar</h4>
+      <span>Content Creator</span>
+    </div>
+
+    <div class="testimonial-card">
+      <p>“Amazing storytelling skills. The reels increased our engagement massively on Instagram. Great attention to detail.”</p>
+      <h4>— Sneha R</h4>
+      <span>Brand Manager</span>
+    </div>
+
+    <div class="testimonial-card">
+      <p>“Fast delivery, premium edits, and clear communication. One of the best video editors I’ve worked with.”</p>
+      <h4>— Rahul S</h4>
+      <span>YouTuber</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h4>Email</h4>
+      <p>mdwahidh07@gmail.com</p>
+    </div>
+    <div class="contact-card">
+      <h4>Instagram</h4>
+      <p>@mr._.wahid</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Mohamed Wahidh | Videographer</p>
+</footer>
+
+<!-- Video Hover Play JS -->
+<script>
+const cards = document.querySelectorAll(".video-card");
+
+cards.forEach(card => {
+  const video = card.querySelector("video");
+
+  card.addEventListener("mouseenter", () => {
+    video.play();
+  });
+
+  card.addEventListener("mouseleave", () => {
+    video.pause();
+  });
+
+  card.addEventListener("click", () => {
+    if(video.paused) video.play();
+    else video.pause();
+  });
+});
+</script>
+
+</body>
+</html>
