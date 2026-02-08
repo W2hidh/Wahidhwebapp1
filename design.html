@@ -1,94 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Graphic Design Projects | Mohamed Wahidh</title>
-
-  <link rel="stylesheet" href="design.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DDoS Detection System – Project 3</title>
+  <link rel="stylesheet" href="Ddos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<section class="graphic-hero">
-  <div class="container">
-    <h1>Graphic Design Projects</h1>
-    <p>
-      Posters, social media creatives, brand identity designs,  
-      crafted using Photoshop, Canva, and Figma.
-    </p>
-  </div>
-</section>
+  <!-- HERO SECTION -->
+  <section class="project-hero">
+    <h1>DDoS Attack Detection System</h1>
+    <p>Machine Learning • Multivariate Correlation Analysis • Triangle Area • KDD Cup 99</p>
+  </section>
 
-<section class="graphic-gallery container">
+  <!-- PROJECT CARD -->
+  <section class="project-container">
 
-  <!-- Project Card -->
-  <div class="graphic-card">
-    <img src="assets/design (1).png" alt="Poster Design">
-    <div class="card-content">
-      <h3>Poster Design</h3>
+    <!-- Overview -->
+    <div class="card">
+      <h2>🔍 Project Overview</h2>
       <p>
-        Eye-catching posters created for events, promotions,  
-        and brand campaigns.
+        This project detects Distributed Denial of Service (DDoS) attacks using a Multivariate Correlation Analysis (MCA) 
+        approach enhanced with a Triangle-Area based technique.  
+        The model analyzes deviations in network traffic correlations to differentiate between normal and malicious activity.  
+        Dataset used: <strong>KDD Cup 99</strong>.
       </p>
-      <span>Photoshop • Canva</span>
     </div>
-  </div>
-  <div class="graphic-card">
-    <img src="assets/design0.png" alt="Logo Design">
-    <div class="card-content">
-      <h3>Logo & Branding</h3>
-      <p>
-        Minimal and modern logos with complete  
-        brand identity concepts.
-      </p>
-      <span>Figma • Photoshop</span>
-    </div>
-  </div>
 
-  <div class="graphic-card">
-    <img src="assets/design2.jpg" alt="Social Media Creative">
-    <div class="card-content">
-      <h3>Social Media Creatives</h3>
+    <!-- Dataset -->
+    <div class="card">
+      <h2>📘 Dataset – KDD Cup 99</h2>
       <p>
-        Instagram & LinkedIn creatives designed to boost  
-        engagement and reach.
+        The dataset contains millions of network connection records with 41 features.  
+        Features include duration, protocol, bytes sent, failed logins, etc.  
+        Categories include <strong>Normal</strong> & <strong>Attack Types</strong> like DoS, Probe, R2L, U2R.
       </p>
-      <span>Canva • Figma</span>
     </div>
-  </div>
 
-  <div class="graphic-card">
-    <img src="assets/design4.png" alt="Banner Design">
-    <div class="card-content">
-      <h3>Banner Design</h3>
+    <!-- MCA Explanation -->
+    <div class="card">
+      <h2>🧠 MCA + Triangle Area Technique</h2>
       <p>
-        Website banners and promotional creatives  
-        for digital marketing.
+        MCA measures correlations between selected features.  
+        Triangle-Area maps 3 features into geometric space and detects abnormalities based on area changes.  
       </p>
-      <span>Photoshop • Canva</span>
-    </div>
-  </div>
-<div class="graphic-card">
-    <img src="assets/design3.png" alt="Logo Design">
-    <div class="card-content">
-      <h3>Logo & Branding</h3>
-      <p>
-        Minimal and modern logos with complete  
-        brand identity concepts.
-      </p>
-      <span>Figma • Photoshop</span>
-    </div>
-  </div>
-</section>
 
-<footer class="graphic-footer">
-  <p>© <span id="year"></span> Mohamed Wahidh — Graphic Design Portfolio</p>
-</footer>
+      <ul>
+        <li>Extract 3 important features</li>
+        <li>Map them as triangle coordinates</li>
+        <li>Compute triangle area for each record</li>
+        <li>Compare with normal traffic patterns</li>
+      </ul>
+    </div>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <!-- Key Code Block -->
+    <div class="card">
+      <h2>💻 Key Python Code</h2>
+
+      <pre><code>
+# Extracting important DDoS related features
+features = ['src_bytes', 'dst_bytes', 'count']
+X = data[features].values
+
+# Function to calculate Triangle Area
+def triangle_area(a, b, c):
+    return abs(a*(b-c) + b*(c-a) + c*(a-b)) / 2
+
+areas = []
+for row in X:
+    a, b, c = row
+    areas.append(triangle_area(a, b, c))
+
+# Adding area to dataset
+data['area'] = areas
+
+# Train-Test Split
+X_train, X_test, y_train, y_test = train_test_split(
+    data[['area']], data['label'], test_size=0.2
+)
+
+# Classification Model
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+      </code></pre>
+
+      <p>This code demonstrates how triangle-area features are extracted and used for anomaly classification.</p>
+    </div>
+
+    <!-- Results -->
+    <div class="card">
+      <h2>📈 Results</h2>
+      <ul>
+        <li>✔ High accuracy on DDoS detection</li>
+        <li>✔ Low false positive rate</li>
+        <li>✔ Lightweight feature extraction using MCA</li>
+        <li>✔ Fast training time</li>
+      </ul>
+    </div>
+
+    <!-- Screenshots -->
+<div class="card">
+  <h2>🖼 Project Screenshots</h2>
+  <p>Add your model graphs, dataset visuals, or output screenshots here.</p>
+
+  <div class="screenshot-box">
+    <img src="ddos 1.png" alt="Screenshot 1">
+    <img src="ddos2.png" alt="Screenshot 2">
+    <img src="ddos3.png" alt="Screenshot 3">
+  </div>
+</div>
+
+    <!-- Back Button -->
+    <div class="back-btn-box">
+      <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+  </section>
 
 </body>
 </html>
+
+
